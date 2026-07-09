@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Glyph Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<h1>Guess the Script</h1>
+
+<h2>
+Score: <span id="score">0</span> /
+<span id="total">0</span>
+</h2>
+
+<div id="glyph">?</div>
+<div id="choices"></div>
+
+<button id="lock">Lock In</button>
+
+<p id="result"></p>
+
+<button id="nextButton" onclick="nextQuestion()">Next</button>
+
+<button id="restartButton" onclick="restartGame()" style="display:none;">
+Play Again
+</button>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
