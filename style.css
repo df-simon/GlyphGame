@@ -1,24 +1,182 @@
 body {
+
+    background-color: black;
+    color: white;
+
+    font-family: Arial, sans-serif;
     text-align: center;
-    font-family: Arial;
+
 }
 
+
+/* Main display glyph */
 
 #glyph {
+
     font-size: 150px;
+
     margin: 40px;
+
+    color: white;
+
 }
 
+
+/* All buttons */
+
+button {
+
+    background-color: #222;
+
+    color: white;
+
+    border: 2px solid #555;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+}
+
+
+/* Answer choices */
 
 .choice {
+
     display: block;
-    margin: 10px auto;
-    padding: 15px;
-    width: 200px;
-    font-size: 20px;
+
+    width: 300px;
+    height: 70px;
+
+    margin: 15px auto;
+
+    font-size: 35px;
+
 }
 
 
-.selected {
-    background: lightblue;
+/* Selected answer */
+
+.choice.selected {
+
+    background-color: #555;
+
+    border-color: white;
+
+}
+
+
+/* Correct answer reveal */
+
+.answerReveal {
+
+    font-size: 60px;
+
+    font-weight: bold;
+
+    display: block;
+
+    margin: 15px;
+
+}
+
+
+/* Control buttons */
+
+#lock,
+#nextButton {
+
+    font-size: 22px;
+
+    padding: 12px 30px;
+
+    margin: 10px;
+
+}
+
+
+/* Main menu */
+
+#menu button {
+
+    display: block;
+
+    width: 300px;
+    height: 70px;
+
+    margin: 20px auto;
+
+    font-size: 24px;
+
+}
+
+
+#menu h1 {
+
+    font-size: 70px;
+
+    margin-bottom: 60px;
+
+}
+
+
+/* Result area */
+
+#result {
+
+    color: white;
+
+}
+
+#traditions h2 {
+
+    text-decoration: underline;
+
+}
+
+#traditions h2 {
+
+    text-decoration: underline;
+
+    font-size: 32px;
+
+    margin-top: 40px;
+
+}
+
+#dailyInfo {
+
+    margin-top: 50px;
+
+    max-width: 400px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    color: #aaa;
+
+}
+
+.backButton {
+
+    font-size: 22px;
+
+    padding: 12px 40px;
+
+    margin: 40px;
+
+    background-color: #222;
+
+    color: white;
+
+    border: 2px solid #555;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
 }

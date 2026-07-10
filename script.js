@@ -1,8 +1,12 @@
 let glyphs = [];
 let remainingGlyphs = [];
-
+let ipaAudio = {};
+let glyphsLoaded = false;
 let currentGlyph;
 let selectedAnswer;
+let correctAnswer;
+
+let gameMode = "script";
 
 let score = 0;
 let total = 0;
@@ -11,27 +15,193 @@ let answered = false;
 
 const maxQuestions = 15;
 
+async function loadIPA() {
+  let response = await fetch("data/ipa_audio.json");
+  ipaAudio = await response.json();
+}
+
 
 Promise.all([
+
     fetch("data/arabic.json").then(r => r.json()),
     fetch("data/cyrillic.json").then(r => r.json()),
     fetch("data/geez.json").then(r => r.json()),
     fetch("data/greek.json").then(r => r.json()),
     fetch("data/hebrew.json").then(r => r.json()),
     fetch("data/latin.json").then(r => r.json())
+
 ])
+
 .then(files => {
+
 
     glyphs = files.flat();
 
-    remainingGlyphs = [...glyphs];
 
-    updateScore();
+    console.log(
+    "SUCCESS:",
+    glyphs.length,
+    "glyphs loaded"
+    );
 
-    newRound();
+
+    glyphsLoaded = true;
+
+
+})
+
+.catch(error => {
+
+
+    alert(
+    "JSON ERROR - check console"
+    );
+
+
+    console.error(error);
+
 
 });
 
+function playSound() {
+
+
+    if(!currentGlyph){
+
+        console.log("No glyph selected");
+        return;
+
+    }
+
+
+    let soundKey =
+    currentGlyph.ipa[0];
+
+
+    console.log(
+    "Trying to play:",
+    soundKey
+    );
+
+
+    let soundFile =
+    ipaAudio[soundKey];
+
+
+    if(!soundFile){
+
+        console.log(
+        "Missing sound:",
+        soundKey
+        );
+
+        return;
+
+    }
+
+
+    console.log(
+    "File:",
+    soundFile
+    );
+
+
+    let audio =
+    new Audio(soundFile);
+
+
+    audio.play()
+    .catch(error => {
+
+        console.log(
+        "Audio failed:",
+        error
+        );
+
+    });
+
+
+}
+
+async function startGame(mode){
+
+if(!glyphsLoaded){
+
+    alert("Loading letters...");
+    return;
+
+}
+await loadIPA();
+
+    gameMode = mode;
+
+
+    document.getElementById("menu").style.display =
+    "none";
+
+
+    document.getElementById("game").style.display =
+    "block";
+
+
+  if(mode === "script"){
+
+    document.getElementById("modeTitle").innerHTML =
+    "Guess the Script";
+
+    document.getElementById("soundButton").style.display =
+    "none";
+
+}
+
+
+if(mode === "sound"){
+
+    document.getElementById("modeTitle").innerHTML =
+    "Guess the Sound";
+
+    document.getElementById("soundButton").style.display =
+    "inline";
+
+}
+
+
+if(mode === "glyph"){
+
+    document.getElementById("modeTitle").innerHTML =
+    "Guess the Glyph";
+
+    document.getElementById("soundButton").style.display =
+    "none";
+
+}
+
+ 
+
+score = 0;
+total = 0;
+
+if(gameMode === "sound"){
+
+    remainingGlyphs =
+    glyphs.filter(glyph =>
+        glyph.ipa.length > 0 &&
+        ipaAudio[glyph.ipa[0]]
+    );
+
+}
+else{
+
+    remainingGlyphs =
+    [...glyphs];
+
+}
+
+updateScore();
+
+newRound();
+
+}
 
 
 function updateScore(){
@@ -73,28 +243,117 @@ function newRound(){
 
 
 
+if(gameMode === "script"){
+
     document.getElementById("glyph").innerHTML =
     currentGlyph.glyph;
 
+}
 
 
-    let answers =
-    [currentGlyph.script];
+if(gameMode === "sound"){
+
+    document.getElementById("glyph").innerHTML =
+    "🔊";
+
+   
+
+}
+if(gameMode === "sound"){
+
+    document.getElementById("glyph").onclick =
+    playSound;
+
+}
+else{
+
+    document.getElementById("glyph").onclick =
+    null;
+
+}
+
+if(gameMode === "glyph"){
+
+    document.getElementById("glyph").innerHTML =
+    currentGlyph.name;
+
+}
+
+if(gameMode === "script"){
+
+    correctAnswer = currentGlyph.script;
+
+}
+
+
+if(gameMode === "sound"){
+
+    correctAnswer = currentGlyph.glyph;
+
+}
+
+
+if(gameMode === "glyph"){
+
+    correctAnswer = currentGlyph.glyph;
+
+}
+
+
+let answers =
+[correctAnswer];
 
 
 
-    while(answers.length < 4){
-
-        let random =
-        glyphs[Math.floor(Math.random()*glyphs.length)].script;
+while(answers.length < 4){
 
 
-        if(!answers.includes(random)){
-            answers.push(random);
-        }
+   let sourceList;
+
+if(gameMode === "sound"){
+    sourceList = remainingGlyphs;
+}
+else{
+    sourceList = glyphs;
+}
+
+let randomGlyph =
+sourceList[Math.floor(Math.random()*sourceList.length)];
+
+
+    let randomAnswer;
+
+
+    if(gameMode === "script"){
+
+        randomAnswer = randomGlyph.script;
 
     }
 
+
+    if(gameMode === "sound"){
+
+        randomAnswer = randomGlyph.glyph;
+
+    }
+
+
+    if(gameMode === "glyph"){
+
+        randomAnswer = randomGlyph.glyph;
+
+    }
+
+
+
+    if(!answers.includes(randomAnswer)){
+
+        answers.push(randomAnswer);
+
+    }
+
+
+}
 
 
     answers.sort(()=>Math.random()-0.5);
@@ -192,22 +451,48 @@ Transliteration: ${currentGlyph.transliteration}
 `;
 
 
-if(selectedAnswer === currentGlyph.script){
 
+
+if(gameMode === "script"){
+    correctAnswer = currentGlyph.script;
+}
+
+
+if(gameMode === "sound"){
+    correctAnswer = currentGlyph.glyph;
+}
+
+
+if(gameMode === "glyph"){
+    correctAnswer = currentGlyph.glyph;
+}
+
+
+
+if(selectedAnswer === correctAnswer){
 
     score++;
 
 
-    document.getElementById("result").innerHTML =
-    "✅ Correct" + info;
+  document.getElementById("result").innerHTML =
+`
+✅ Correct
+<br>
+<span class="answerReveal">${correctAnswer}</span>
+`
++ info;
+
 
 
 } else {
 
 
     document.getElementById("result").innerHTML =
-    "❌ Wrong. It was " 
-    + currentGlyph.script 
+    `
+    ❌ Wrong. It was 
+    <br>
+    <span class="answerReveal">${correctAnswer}</span>
+    `
     + info;
 
 
@@ -319,35 +604,74 @@ Rank:<br>
 document.getElementById("lock").style.display = "none";
 
 document.getElementById("nextButton").style.display = "none";
+document.getElementById("soundButton").style.display =
+"none";
 
 document.getElementById("restartButton").style.display = "inline";
 
 }
 
-function restartGame(){
+function returnMenu(){
 
-document.querySelector("h2").style.display = "block";
+document.getElementById("howToPlay").style.display =
+"none";
 
+document.getElementById("traditions").style.display =
+"none";
     score = 0;
     total = 0;
 
 
-    remainingGlyphs = [...glyphs];
-
-
     updateScore();
 
-document.getElementById("result").innerHTML = "";
+
+    document.getElementById("game").style.display =
+    "none";
 
 
-    document.getElementById("lock").style.display = "inline";
-
-    document.getElementById("nextButton").style.display = "inline";
-
-    document.getElementById("restartButton").style.display = "none";
+    document.getElementById("menu").style.display =
+    "block";
 
 
-    newRound();
+    document.getElementById("restartButton").style.display =
+    "none";
 
+
+    document.getElementById("lock").style.display =
+    "inline";
+
+
+    document.getElementById("nextButton").style.display =
+    "inline";
+
+
+    document.querySelector("h2").style.display =
+    "block";
+
+
+    document.getElementById("result").innerHTML =
+    "";
+
+
+}
+
+function showHowToPlay(){
+
+    document.getElementById("menu").style.display =
+    "none";
+
+    document.getElementById("howToPlay").style.display =
+    "block";
+
+}
+
+
+function showTraditions(){
+
+    document.getElementById("menu").style.display =
+    "none";
+
+    document.getElementById("traditions").style.display =
+    "block";
 
 }

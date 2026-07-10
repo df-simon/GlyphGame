@@ -1,0 +1,62 @@
+{
+  "a": "assets/audio/ipa/a.wav",
+  "b": "assets/audio/ipa/b.wav",
+  "d": "assets/audio/ipa/d.wav",
+  "ð": "assets/audio/ipa/ð.wav",
+  "f": "assets/audio/ipa/f.wav",
+  "h": "assets/audio/ipa/h.wav",
+  "ħ": "assets/audio/ipa/ħ.wav",
+  "j": "assets/audio/ipa/j.wav",
+  "k": "assets/audio/ipa/k.wav",
+  "l": "assets/audio/ipa/l.wav",
+  "m": "assets/audio/ipa/m.wav",
+  "n": "assets/audio/ipa/n.wav",
+  "p": "assets/audio/ipa/p.wav",
+  "q": "assets/audio/ipa/q.wav",
+  "r": "assets/audio/ipa/r.wav",
+ "ɾ": "assets/audio/ipa/ɾ.wav",
+  "s": "assets/audio/ipa/s.wav",
+  "ʃ": "assets/audio/ipa/ʃ.wav",
+  "t": "assets/audio/ipa/t.wav",
+  "θ": "assets/audio/ipa/θ.wav",
+  "w": "assets/audio/ipa/w.wav",
+  "x": "assets/audio/ipa/x.wav",
+  "z": "assets/audio/ipa/z.wav",
+
+  "t͡ʃ": "assets/audio/ipa/t͡ʃ.wav",
+  "d͡ʒ": "assets/audio/ipa/d͡ʒ.wav",
+
+  "sˤ": "assets/audio/ipa/emphatic s.wav",
+  "tˤ": "assets/audio/ipa/emphatic t.wav",
+  "dˤ": "assets/audio/ipa/emphatic d.wav",
+  "ðˤ": "assets/audio/ipa/emphatic ð.wav",
+
+
+  "pʼ": "assets/audio/ipa/pʼ.wav",
+  "tʼ": "assets/audio/ipa/tʼ.wav",
+  "kʼ": "assets/audio/ipa/kʼ.wav",
+  "qʼ": "assets/audio/ipa/qʼ.wav",
+  "t͡sʼ": "assets/audio/ipa/t͡sʼ.wav",
+  "t͡ʃʼ": "assets/audio/ipa/t͡ʃʼ.wav",
+"e": "assets/audio/ipa/e.wav",
+"g": "assets/audio/ipa/g.wav",
+"i": "assets/audio/ipa/i.wav",
+"o": "assets/audio/ipa/o.wav",
+"u": "assets/audio/ipa/u.wav",
+"y": "assets/audio/ipa/y.wav",
+"ʔ": "assets/audio/ipa/ʔ.wav",
+"ʕ": "assets/audio/ipa/ʕ.wav",
+"ɲ": "assets/audio/ipa/ɲ.wav",
+
+
+"ja": "assets/audio/ipa/ja.wav",
+"je": "assets/audio/ipa/je.wav",
+"jo": "assets/audio/ipa/jo.wav",
+"ju": "assets/audio/ipa/ju.wav",
+
+
+"ks": "assets/audio/ipa/ks.wav",
+"kʷ": "assets/audio/ipa/kʷ.wav",
+"d͡z": "assets/audio/ipa/d͡z.wav",
+"t͡s": "assets/audio/ipa/t͡s.wav"
+}

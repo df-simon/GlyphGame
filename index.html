@@ -3,34 +3,438 @@
 <html>
 
 <head>
-    <title>Glyph Game</title>
-    <link rel="stylesheet" href="style.css">
+
+<title>Scryble</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 
 <body>
 
-<h1>Guess the Script</h1>
+
+<!-- MAIN MENU -->
+
+<div id="menu">
+
+<h1>Scryble</h1>
+
+
+<button onclick="startGame('script')">
+Guess the Script
+</button>
+
+
+<button onclick="startGame('sound')">
+Guess the Sound
+</button>
+
+
+<button onclick="startGame('glyph')">
+Guess the Glyph
+</button>
+
+
+<button onclick="showHowToPlay()">
+How To Play
+</button>
+
+
+<button onclick="showTraditions()">
+Script Traditions
+</button>
+
+
+<p id="dailyInfo">
+
+Each round contains 15 questions.
+<br><br>
+Each game mode has 1 Daily Round that counts to your high score.
+<br><br>
+You can play unlimited Free Rounds after your Daily Round.
+
+</p>
+
+
+</div>
+
+
+
+<!-- HOW TO PLAY PAGE -->
+
+
+<div id="howToPlay" style="display:none">
+
+
+<h1>How To Play</h1>
+
+
+<h2>Guess Script</h2>
+
+<p>
+Identify which writing system the symbol belongs to.
+</p>
+
+<p>
+Example:
+<br>
+ش → Arabic
+</p>
+
+
+
+<h2>Guess Sound</h2>
+
+<p>
+Listen to a sound and choose the correct letter.
+</p>
+
+<p>
+Example:
+<br>
+🔊 /ʃ/ → ש ش Ш
+</p>
+
+
+
+<h2>Guess Glyph</h2>
+
+<p>
+See the letter name and choose the correct symbol.
+</p>
+
+<p>
+Example:
+<br>
+Alpha → Α
+</p>
+
+
+
+<button class="backButton" onclick="returnMenu()">
+Back
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- SCRIPT TRADITIONS PAGE -->
+
+
+<div id="traditions" style="display:none">
+
+
+<h1>Script Traditions</h1>
+
+
+<h2>Why these pronunciations?</h2>
+
+
+<p>
+Many writing systems are thousands of years old, and their letters have
+changed pronunciation as languages evolved.
+</p>
+
+
+<p>
+Scryble focuses on older and more conservative pronunciation traditions
+that preserve historical sound distinctions whenever possible.
+</p>
+
+
+<p>
+The goal is not to show the most common modern pronunciation.
+</p>
+
+
+<p>
+The goal is to reveal the original relationships between scripts and the sounds
+their letters were designed to represent.
+</p>
+
+
+<p>
+This approach highlights connections between related alphabets:
+</p>
+
+
+<p>
+How Phoenician letters developed into Hebrew, Arabic, Greek,
+Latin, Cyrillic, and other writing systems.
+</p>
+
+
+<p>
+Where no single ancient pronunciation survives, Scryble uses a traditional
+or historically informed pronunciation that best represents the character
+of the script.
+</p>
+
+
+
+<h2>Arabic</h2>
+
+<p>
+Scryble uses Classical Arabic pronunciation, the traditional pronunciation
+used for Qur'anic Arabic and formal study.
+</p>
+
+<p>
+Examples:
+<br>
+ج Jim : /d͡ʒ/ "j" sound.
+Many modern dialects: /g/ in Egyptian Arabic or /ʒ/ in parts of the Levant.
+<br><br>
+
+ق Qaf : /q/ deep Q sound.
+Many modern dialects: /ʔ/ glottal stop, /g/, or /k/.
+<br><br>
+
+ث Tha : /θ/ "th" sound.
+Many modern dialects merge it with /t/ or /s/.
+</p>
+
+
+
+<h2>Hebrew</h2>
+
+<p>
+Scryble uses Yemenite Hebrew and the reconstructed Tiberian tradition,
+which preserve older Semitic sounds.
+</p>
+
+<p>
+Examples:
+<br>
+ו Waw : /w/.
+Modern Israeli Hebrew (Vav): usually /v/.
+<br><br>
+
+ח Het : /ħ/ deep throat H.
+Modern Israeli Hebrew: usually /χ/ like German Bach.
+<br><br>
+
+ע Ayin : /ʕ/ throat consonant.
+Modern Israeli Hebrew: usually silent.
+<br><br>
+
+ק Qof : /q/.
+Modern Israeli Hebrew: usually merged with /k/.
+</p>
+
+
+
+<h2>Greek</h2>
+
+<p>
+Scryble uses historical Greek pronunciations to show older sound values
+preserved closer to Ancient Greek.
+</p>
+
+<p>
+Examples:
+<br>
+Β Beta : /b/.
+Modern Greek: /v/.
+<br><br>
+
+Δ Delta : /d/.
+Modern Greek: /ð/ like "th" in this.
+<br><br>
+
+Γ Gamma : /g/.
+Modern Greek: often /ɣ/.
+<br><br>
+
+Η Eta : /e/.
+Modern Greek: /i/.
+</p>
+
+
+
+<h2>Latin</h2>
+
+<p>
+Scryble uses Classical Latin pronunciation from the Roman period,
+instead of modern church or English-influenced pronunciation.
+</p>
+
+<p>
+Examples:
+<br>
+V : /w/ as in "wine".
+Later Latin traditions: /v/.
+<br><br>
+
+C : always /k/.
+Later pronunciations: sometimes /s/ or /t͡ʃ/.
+<br><br>
+
+G : always hard /g/.
+Modern languages often soften it before certain vowels.
+<br><br>
+
+AE : "eye" sound.
+Later traditions: often "eh".
+</p>
+
+
+
+<h2>Cyrillic</h2>
+
+<p>
+Scryble uses a historically informed Slavic pronunciation, based on
+traditional Cyrillic sound values and older Slavic distinctions.
+</p>
+
+<p>
+Modern Cyrillic languages have developed in different directions,
+and some letters have shifted, merged, or disappeared.
+Scryble preserves the older relationship between the letters and
+the sounds they originally represented.
+</p>
+
+<p>
+Examples:
+<br>
+
+Г Ge : /g/ hard G sound.
+<br>
+Ukrainian: shifted to /ɦ/.
+<br><br>
+
+Ѣ Yat (historical Cyrillic) → Older Slavic: separate vowel.
+<br>
+Modern Russian: merged with Е.
+<br>
+Other Slavic languages developed different reflexes.
+<br><br>
+
+Щ Shcha : preserves a distinct historical Slavic sound.
+<br>
+Modern languages differ: Russian /ɕː/, Bulgarian /ʃt/.
+</p>
+
+
+
+<h2>Ge'ez</h2>
+
+<p>
+Scryble uses Classical Ge'ez pronunciation, the ancient liturgical
+language of Ethiopia and Eritrea.
+This preserves older Ethiosemitic and Afroasiatic sound distinctions.
+</p>
+
+<p>
+Many modern Ethiosemitic languages descended from or related to Ge'ez
+have simplified some of these older consonant distinctions.
+Scryble keeps the more conservative traditional forms.
+</p>
+
+<p>
+Examples:
+<br>
+
+ሠ Śä : preserves a separate historical ś sound.
+<br>
+Modern Amharic: merged with ሰ Sä.
+<br><br>
+
+ኀ Ḫä : preserves the older guttural sound.
+<br>
+Modern Amharic: mostly merged with ሀ Hä.
+<br><br>
+
+ዐ ʿÄyn : preserves the Semitic throat consonant /ʕ/.
+<br>
+Modern Amharic: generally lost as a distinct consonant.
+<br><br>
+
+ጠ Ṭä / ቀ Qä / ጸ Ṣä : preserves ejective consonants.
+<br>
+Modern Ethiosemitic languages still preserve many ejectives,
+but individual sounds have shifted differently.
+</p>
+
+
+
+<button class="backButton" onclick="returnMenu()">
+Back
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- GAME SCREEN -->
+
+
+<div id="game" style="display:none;">
+
+
+<h1 id="modeTitle"></h1>
+
 
 <h2>
-Score: <span id="score">0</span> /
+Score:
+<span id="score">0</span>
+/
 <span id="total">0</span>
 </h2>
 
+
+
 <div id="glyph">?</div>
+
+
+
+<button id="soundButton" onclick="playSound()">
+🔊 Play Sound
+</button>
+
+
+
 <div id="choices"></div>
 
-<button id="lock">Lock In</button>
+
+
+<button id="lock">
+Lock In
+</button>
+
+
 
 <p id="result"></p>
 
-<button id="nextButton" onclick="nextQuestion()">Next</button>
 
-<button id="restartButton" onclick="restartGame()" style="display:none;">
-Play Again
+
+<button id="nextButton" onclick="nextQuestion()">
+Next
 </button>
 
+
+
+<button id="restartButton" onclick="returnMenu()" style="display:none;">
+Main Menu
+</button>
+
+
+
+</div>
+
+
+
+
 <script src="script.js"></script>
+
 
 </body>
 
