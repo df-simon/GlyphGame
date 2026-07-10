@@ -5,8 +5,11 @@ let glyphsLoaded = false;
 let currentGlyph;
 let selectedAnswer;
 let correctAnswer;
+let answerHistory = [];
 
 let gameMode = "script";
+let roundType = "daily";
+let today = new Date().toDateString();
 
 let score = 0;
 let total = 0;
@@ -28,7 +31,9 @@ Promise.all([
     fetch("data/geez.json").then(r => r.json()),
     fetch("data/greek.json").then(r => r.json()),
     fetch("data/hebrew.json").then(r => r.json()),
-    fetch("data/latin.json").then(r => r.json())
+    fetch("data/latin.json").then(r => r.json()),
+        fetch("data/phoenician.json").then(r => r.json())
+
 
 ])
 
@@ -135,6 +140,24 @@ await loadIPA();
 
     gameMode = mode;
 
+    document.getElementById("roundType").innerHTML =
+roundType.toUpperCase() + " ROUND";
+
+    let playedToday =
+localStorage.getItem(mode + "_daily_date");
+
+
+if(playedToday === today){
+
+    roundType = "free";
+
+}
+else{
+
+    roundType = "daily";
+
+}
+
 
     document.getElementById("menu").style.display =
     "none";
@@ -180,6 +203,7 @@ if(mode === "glyph"){
 
 score = 0;
 total = 0;
+answerHistory = [];
 
 if(gameMode === "sound"){
 
@@ -473,6 +497,8 @@ if(selectedAnswer === correctAnswer){
 
     score++;
 
+     answerHistory.push("🟩");
+
 
   document.getElementById("result").innerHTML =
 `
@@ -486,6 +512,7 @@ if(selectedAnswer === correctAnswer){
 
 } else {
 
+     answerHistory.push("🟥");
 
     document.getElementById("result").innerHTML =
     `
@@ -535,6 +562,53 @@ function nextQuestion(){
 
 function endGame(){
 
+    let lifetimeScore =
+Number(
+localStorage.getItem("daily_total_score") || 0
+);
+
+
+let lifetimeRounds =
+Number(
+localStorage.getItem("daily_rounds_played") || 0
+);
+
+
+
+localStorage.setItem(
+"daily_total_score",
+lifetimeScore + score
+);
+
+
+
+localStorage.setItem(
+"daily_rounds_played",
+lifetimeRounds + 1
+);
+
+if(roundType === "daily"){
+
+    localStorage.setItem(
+    gameMode + "_daily_date",
+    today
+    );
+let oldHigh =
+localStorage.getItem(gameMode + "_highscore") || 0;
+
+
+if(score > oldHigh){
+
+    localStorage.setItem(
+    gameMode + "_highscore",
+    score
+    );
+
+}
+}
+loadHighScores();
+loadDailyStatus();
+loadOverallRank();
 document.querySelector("h2").style.display = "none";
 
 document.getElementById("choices").innerHTML = "";
@@ -609,9 +683,15 @@ document.getElementById("soundButton").style.display =
 
 document.getElementById("restartButton").style.display = "inline";
 
+document.getElementById("shareButton").style.display =
+"inline";
+
 }
 
 function returnMenu(){
+
+document.getElementById("shareButton").style.display =
+"none";
 
 document.getElementById("howToPlay").style.display =
 "none";
@@ -623,6 +703,9 @@ document.getElementById("traditions").style.display =
 
 
     updateScore();
+
+document.getElementById("statsPage").style.display =
+"none";
 
 
     document.getElementById("game").style.display =
@@ -673,5 +756,209 @@ function showTraditions(){
 
     document.getElementById("traditions").style.display =
     "block";
+
+}
+
+function loadHighScores(){
+
+
+    document.getElementById("scriptHigh").innerHTML =
+    localStorage.getItem("script_highscore") || 0;
+
+
+    document.getElementById("soundHigh").innerHTML =
+    localStorage.getItem("sound_highscore") || 0;
+
+
+    document.getElementById("glyphHigh").innerHTML =
+    localStorage.getItem("glyph_highscore") || 0;
+
+
+}
+
+loadHighScores();
+loadDailyStatus();
+loadOverallRank();
+
+function loadDailyStatus(){
+
+
+    let today =
+    new Date().toDateString();
+
+
+    let modes =
+    ["script", "sound", "glyph"];
+
+
+    modes.forEach(mode => {
+
+
+        let played =
+        localStorage.getItem(
+        mode + "_daily_date"
+        );
+
+
+        let status =
+        document.getElementById(
+        mode + "Status"
+        );
+
+
+        if(played === today){
+
+
+            status.innerHTML =
+            "✓ Free Play";
+
+
+        }
+        else{
+
+
+            status.innerHTML =
+            "☀️ Daily Available";
+
+
+        }
+
+
+    });
+
+
+}
+
+function shareScore(){
+
+
+let grid = "";
+
+
+answerHistory.forEach((box,index)=>{
+
+
+    grid += box;
+
+
+    if((index + 1) % 5 === 0){
+
+        grid += "\n";
+
+    }
+
+
+});
+
+
+let text =
+`
+Scryble 📝
+
+${document.getElementById("modeTitle").innerHTML}
+${roundType.toUpperCase()} ROUND
+
+Score: ${score}/${maxQuestions}
+
+${grid}
+`;
+
+
+navigator.clipboard.writeText(text);
+
+
+alert("Result copied!");
+
+}
+
+function loadOverallRank(){
+
+
+let totalScore =
+Number(
+localStorage.getItem("daily_total_score") || 0
+);
+
+
+let rounds =
+Number(
+localStorage.getItem("daily_rounds_played") || 0
+);
+
+
+
+let average = 0;
+
+
+if(rounds > 0){
+
+    average =
+    totalScore / rounds;
+
+}
+
+
+
+let rank =
+"✏️ Pen Cap Chewer";
+
+
+
+if(rounds >= 50 && average >= 14){
+
+    rank =
+    "🌍 Linguist";
+
+}
+else if(rounds >= 25 && average >= 12){
+
+    rank =
+    "📜 Scholar";
+
+}
+else if(rounds >= 10 && average >= 9){
+
+    rank =
+    "🖋️ Copyist";
+
+}
+else if(rounds >= 3 && average >= 5){
+
+    rank =
+    "📖 Apprentice";
+
+}
+
+
+
+document.getElementById("rankName").innerHTML =
+rank;
+
+
+document.getElementById("averageScore").innerHTML =
+average.toFixed(1);
+
+
+document.getElementById("dailyRounds").innerHTML =
+rounds;
+
+
+}
+
+function showStats(){
+
+
+document.getElementById("menu").style.display =
+"none";
+
+
+document.getElementById("statsPage").style.display =
+"block";
+
+
+loadHighScores();
+
+loadOverallRank();
+
 
 }

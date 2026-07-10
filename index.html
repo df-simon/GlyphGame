@@ -21,18 +21,31 @@
 <h1>Scryble</h1>
 
 
+
+
+
 <button onclick="startGame('script')">
 Guess the Script
+<br>
+<span id="scriptStatus"></span>
 </button>
 
 
 <button onclick="startGame('sound')">
 Guess the Sound
+<br>
+<span id="soundStatus"></span>
 </button>
 
 
 <button onclick="startGame('glyph')">
 Guess the Glyph
+<br>
+<span id="glyphStatus"></span>
+</button>
+
+<button onclick="showStats()">
+Stats
 </button>
 
 
@@ -59,7 +72,69 @@ You can play unlimited Free Rounds after your Daily Round.
 
 </div>
 
+<div id="statsPage" style="display:none">
 
+
+<h1>Stats</h1>
+
+
+<div id="overallRank">
+
+<h2>Overall Rank</h2>
+
+<p id="rankName">
+✏️ Pen Cap Chewer
+</p>
+
+
+<p>
+Average:
+<span id="averageScore">0</span>/15
+</p>
+
+
+<p>
+Daily Rounds:
+<span id="dailyRounds">0</span>
+</p>
+
+
+</div>
+
+
+
+<div id="highScores">
+
+<h2>High Scores</h2>
+
+
+<p>
+Script:
+<span id="scriptHigh">0</span>/15
+</p>
+
+
+<p>
+Sound:
+<span id="soundHigh">0</span>/15
+</p>
+
+
+<p>
+Glyph:
+<span id="glyphHigh">0</span>/15
+</p>
+
+
+</div>
+
+
+<button class="backButton" onclick="returnMenu()">
+Back
+</button>
+
+
+</div>
 
 <!-- HOW TO PLAY PAGE -->
 
@@ -362,6 +437,60 @@ but individual sounds have shifted differently.
 </p>
 
 
+<h2><u>Phoenician</u></h2>
+
+<p>
+Based on reconstructed Classical Phoenician pronunciation from the
+first millennium BCE.
+Phoenician was a Northwest Semitic abjad and one of the most influential
+writing systems in history.
+</p>
+
+<p>
+Scryble uses reconstructed older Semitic pronunciations, preserving
+sounds that show the relationship between Phoenician and later scripts.
+Some descendants preserved these sounds, while others adapted the letters
+for very different languages.
+</p>
+
+<p>
+Examples:
+<br><br>
+
+𐤀 Aleph represented the glottal stop /ʔ/.
+This sound was preserved in Semitic descendants such as Hebrew Aleph (א)
+and Arabic Hamza (ء), while Greek transformed Aleph into the vowel
+Alpha (Α), ancestor of Latin A.
+<br><br>
+
+𐤅 Waw represented /w/.
+This pronunciation survives in Classical Arabic Waw (و) and older Hebrew
+traditions, while some later Hebrew traditions shifted it toward /v/.
+Through Greek and Latin development, it also contributed to letters such
+as F, U, V, W, and Y.
+<br><br>
+
+𐤇 Het represented the deep throat sound /ħ/.
+This survives in Arabic Ḥa (ح) and traditional Semitic pronunciations,
+while Greek Eta (Η) lost the original consonant value.
+<br><br>
+
+𐤈 Tet represented an emphatic /tˤ/.
+This sound is preserved in Arabic Ṭa (ط) and related Semitic traditions,
+while Greek adapted the letter into Theta (Θ).
+<br><br>
+
+𐤏 Ayin represented the voiced throat sound /ʕ/.
+This survives in Arabic Ayn (ع) and older Hebrew traditions, while Greek
+adapted the letter into Omicron (Ο), changing it into a vowel.
+<br><br>
+
+𐤒 Qoph represented the uvular /q/.
+This survives in Arabic Qaf (ق) and some traditional Hebrew pronunciations.
+It also became Greek Qoppa (Ϙ) and eventually Latin Q.
+</p>
+
+
 
 <button class="backButton" onclick="returnMenu()">
 Back
@@ -382,6 +511,7 @@ Back
 
 <h1 id="modeTitle"></h1>
 
+<h3 id="roundType"></h3>
 
 <h2>
 Score:
@@ -426,6 +556,10 @@ Next
 Main Menu
 </button>
 
+
+<button id="shareButton" onclick="shareScore()" style="display:none;">
+Share
+</button>
 
 
 </div>

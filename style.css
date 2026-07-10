@@ -180,3 +180,62 @@ button {
     cursor: pointer;
 
 }
+
+#highScores {
+
+    margin-bottom: 40px;
+
+    color: white;
+
+}
+
+
+#highScores h2 {
+
+    text-decoration: underline;
+
+}
+
+
+#highScores p {
+
+    font-size: 22px;
+
+}
+
+#menu button span {
+
+    font-size: 14px;
+
+    color: #aaa;
+
+}
+
+#overallRank {
+
+    margin-bottom: 40px;
+
+}
+
+
+#overallRank h2 {
+
+    text-decoration: underline;
+
+}
+
+
+#rankName {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+}
+
+
+#overallRank p {
+
+    font-size: 20px;
+
+}
