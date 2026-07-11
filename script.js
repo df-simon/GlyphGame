@@ -16,6 +16,13 @@ let total = 0;
 
 let answered = false;
 
+
+let daysPlayed = Number(localStorage.getItem("daysPlayed")) || 0;
+
+let lastPlayedDate =
+localStorage.getItem("lastPlayedDate") || "";
+
+
 const maxQuestions = 15;
 
 async function loadIPA() {
@@ -52,6 +59,7 @@ Promise.all([
 
     glyphsLoaded = true;
 
+    checkDailyVisit();
 
 })
 
@@ -67,6 +75,32 @@ Promise.all([
 
 
 });
+
+
+function checkDailyVisit(){
+
+    const today = new Date().toISOString().split("T")[0];
+
+    if(lastPlayedDate !== today){
+
+        daysPlayed++;
+
+        lastPlayedDate = today;
+
+        localStorage.setItem(
+            "daysPlayed",
+            daysPlayed
+        );
+
+        localStorage.setItem(
+            "lastPlayedDate",
+            today
+        );
+
+    }
+
+}
+
 
 function playSound() {
 
@@ -690,31 +724,42 @@ document.getElementById("shareButton").style.display =
 
 function returnMenu(){
 
-document.getElementById("shareButton").style.display =
-"none";
-
-document.getElementById("howToPlay").style.display =
-"none";
-
-document.getElementById("traditions").style.display =
-"none";
-    score = 0;
-    total = 0;
 
 
-    updateScore();
 
-document.getElementById("statsPage").style.display =
-"none";
-
+    // hide all pages
 
     document.getElementById("game").style.display =
     "none";
 
 
+        document.getElementById("statsPage").style.display =
+    "none";
+
+    document.getElementById("howToPlay").style.display =
+    "none";
+
+
+    document.getElementById("traditions").style.display =
+    "none";
+
+
+    document.querySelectorAll(".scriptInfo")
+    .forEach(page => {
+
+        page.style.display =
+        "none";
+
+    });
+
+
+    // show menu
+
     document.getElementById("menu").style.display =
     "block";
 
+
+    
 
     document.getElementById("restartButton").style.display =
     "none";
@@ -737,6 +782,7 @@ document.getElementById("statsPage").style.display =
 
 
 }
+
 
 function showHowToPlay(){
 
@@ -874,6 +920,8 @@ alert("Result copied!");
 function loadOverallRank(){
 
 
+
+    
 let totalScore =
 Number(
 localStorage.getItem("daily_total_score") || 0
@@ -943,6 +991,9 @@ document.getElementById("dailyRounds").innerHTML =
 rounds;
 
 
+document.getElementById("daysPlayed").innerHTML =
+daysPlayed;
+
 }
 
 function showStats(){
@@ -959,6 +1010,42 @@ document.getElementById("statsPage").style.display =
 loadHighScores();
 
 loadOverallRank();
+
+
+}
+
+function showScriptPage(page){
+
+
+    document.getElementById("traditions").style.display =
+    "none";
+
+
+    document.getElementById(page).style.display =
+    "block";
+
+
+}
+
+
+
+function backToTraditions(){
+
+
+    document.querySelectorAll(".scriptInfo")
+    .forEach(page => {
+
+
+        page.style.display =
+        "none";
+
+
+    });
+
+
+
+    document.getElementById("traditions").style.display =
+    "block";
 
 
 }

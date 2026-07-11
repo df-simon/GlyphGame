@@ -92,6 +92,10 @@ Average:
 <span id="averageScore">0</span>/15
 </p>
 
+<p>
+Days Played:
+<span id="daysPlayed">0</span>
+</p>
 
 <p>
 Daily Rounds:
@@ -162,7 +166,7 @@ Example:
 <h2>Guess Sound</h2>
 
 <p>
-Listen to a sound and choose the correct letter.
+Listen to a sound and choose the correct character.
 </p>
 
 <p>
@@ -176,7 +180,7 @@ Example:
 <h2>Guess Glyph</h2>
 
 <p>
-See the letter name and choose the correct symbol.
+See the character name and choose the correct symbol.
 </p>
 
 <p>
@@ -200,296 +204,72 @@ Back
 
 <!-- SCRIPT TRADITIONS PAGE -->
 
-
 <div id="traditions" style="display:none">
 
 
 <h1>Script Traditions</h1>
 
 
-<h2>Why these pronunciations?</h2>
+<h2><u>Why these pronunciations?</u></h2>
 
 
 <p>
-Many writing systems are thousands of years old, and their letters have
+Many writing systems are thousands of years old, and their characters have<br>
 changed pronunciation as languages evolved.
 </p>
 
 
 <p>
-Scryble focuses on older and more conservative pronunciation traditions
-that preserve historical sound distinctions whenever possible.
+Scryble focuses on older and more conservative pronunciation traditions<br>
+that preserve historical sound distinctions whenever possible.<br>
+The goal is not always to show the most common modern pronunciation,<br>
+but to reveal the relationships between scripts and the sounds their<br>
+characters were originally designed to represent.
 </p>
 
 
 <p>
-The goal is not to show the most common modern pronunciation.
-</p>
-
-
-<p>
-The goal is to reveal the original relationships between scripts and the sounds
-their letters were designed to represent.
-</p>
-
-
-<p>
-This approach highlights connections between related alphabets:
-</p>
-
-
-<p>
-How Phoenician letters developed into Hebrew, Arabic, Greek,
-Latin, Cyrillic, and other writing systems.
-</p>
-
-
-<p>
-Where no single ancient pronunciation survives, Scryble uses a traditional
-or historically informed pronunciation that best represents the character
+Where no single ancient pronunciation survives, Scryble uses a traditional<br>
+or historically informed pronunciation that best represents the character<br>
 of the script.
 </p>
 
 
+<button onclick="showScriptPage('phoenicianPage')">
+Phoenician
+</button>
 
-<h2>Arabic</h2>
+<button onclick="showScriptPage('arabicPage')">
+Arabic
+</button>
 
-<p>
-Scryble uses Classical Arabic pronunciation, the traditional pronunciation
-used for Qur'anic Arabic and formal study.
-</p>
+<button onclick="showScriptPage('hebrewPage')">
+Hebrew
+</button>
 
-<p>
-Examples:
-<br>
-ج Jim : /d͡ʒ/ "j" sound.
-Many modern dialects: /g/ in Egyptian Arabic or /ʒ/ in parts of the Levant.
+<button onclick="showScriptPage('greekPage')">
+Greek
+</button>
+
+<button onclick="showScriptPage('latinPage')">
+Latin
+</button>
+
+<button onclick="showScriptPage('cyrillicPage')">
+Cyrillic
+</button>
+
+<button onclick="showScriptPage('geezPage')">
+Ge'ez
+</button>
+
+
+<button onclick="showScriptPage('treePage')">
+Family Tree
+</button>
+
+
 <br><br>
-
-ق Qaf : /q/ deep Q sound.
-Many modern dialects: /ʔ/ glottal stop, /g/, or /k/.
-<br><br>
-
-ث Tha : /θ/ "th" sound.
-Many modern dialects merge it with /t/ or /s/.
-</p>
-
-
-
-<h2>Hebrew</h2>
-
-<p>
-Scryble uses Yemenite Hebrew and the reconstructed Tiberian tradition,
-which preserve older Semitic sounds.
-</p>
-
-<p>
-Examples:
-<br>
-ו Waw : /w/.
-Modern Israeli Hebrew (Vav): usually /v/.
-<br><br>
-
-ח Het : /ħ/ deep throat H.
-Modern Israeli Hebrew: usually /χ/ like German Bach.
-<br><br>
-
-ע Ayin : /ʕ/ throat consonant.
-Modern Israeli Hebrew: usually silent.
-<br><br>
-
-ק Qof : /q/.
-Modern Israeli Hebrew: usually merged with /k/.
-</p>
-
-
-
-<h2>Greek</h2>
-
-<p>
-Scryble uses historical Greek pronunciations to show older sound values
-preserved closer to Ancient Greek.
-</p>
-
-<p>
-Examples:
-<br>
-Β Beta : /b/.
-Modern Greek: /v/.
-<br><br>
-
-Δ Delta : /d/.
-Modern Greek: /ð/ like "th" in this.
-<br><br>
-
-Γ Gamma : /g/.
-Modern Greek: often /ɣ/.
-<br><br>
-
-Η Eta : /e/.
-Modern Greek: /i/.
-</p>
-
-
-
-<h2>Latin</h2>
-
-<p>
-Scryble uses Classical Latin pronunciation from the Roman period,
-instead of modern church or English-influenced pronunciation.
-</p>
-
-<p>
-Examples:
-<br>
-V : /w/ as in "wine".
-Later Latin traditions: /v/.
-<br><br>
-
-C : always /k/.
-Later pronunciations: sometimes /s/ or /t͡ʃ/.
-<br><br>
-
-G : always hard /g/.
-Modern languages often soften it before certain vowels.
-<br><br>
-
-AE : "eye" sound.
-Later traditions: often "eh".
-</p>
-
-
-
-<h2>Cyrillic</h2>
-
-<p>
-Scryble uses a historically informed Slavic pronunciation, based on
-traditional Cyrillic sound values and older Slavic distinctions.
-</p>
-
-<p>
-Modern Cyrillic languages have developed in different directions,
-and some letters have shifted, merged, or disappeared.
-Scryble preserves the older relationship between the letters and
-the sounds they originally represented.
-</p>
-
-<p>
-Examples:
-<br>
-
-Г Ge : /g/ hard G sound.
-<br>
-Ukrainian: shifted to /ɦ/.
-<br><br>
-
-Ѣ Yat (historical Cyrillic) → Older Slavic: separate vowel.
-<br>
-Modern Russian: merged with Е.
-<br>
-Other Slavic languages developed different reflexes.
-<br><br>
-
-Щ Shcha : preserves a distinct historical Slavic sound.
-<br>
-Modern languages differ: Russian /ɕː/, Bulgarian /ʃt/.
-</p>
-
-
-
-<h2>Ge'ez</h2>
-
-<p>
-Scryble uses Classical Ge'ez pronunciation, the ancient liturgical
-language of Ethiopia and Eritrea.
-This preserves older Ethiosemitic and Afroasiatic sound distinctions.
-</p>
-
-<p>
-Many modern Ethiosemitic languages descended from or related to Ge'ez
-have simplified some of these older consonant distinctions.
-Scryble keeps the more conservative traditional forms.
-</p>
-
-<p>
-Examples:
-<br>
-
-ሠ Śä : preserves a separate historical ś sound.
-<br>
-Modern Amharic: merged with ሰ Sä.
-<br><br>
-
-ኀ Ḫä : preserves the older guttural sound.
-<br>
-Modern Amharic: mostly merged with ሀ Hä.
-<br><br>
-
-ዐ ʿÄyn : preserves the Semitic throat consonant /ʕ/.
-<br>
-Modern Amharic: generally lost as a distinct consonant.
-<br><br>
-
-ጠ Ṭä / ቀ Qä / ጸ Ṣä : preserves ejective consonants.
-<br>
-Modern Ethiosemitic languages still preserve many ejectives,
-but individual sounds have shifted differently.
-</p>
-
-
-<h2><u>Phoenician</u></h2>
-
-<p>
-Based on reconstructed Classical Phoenician pronunciation from the
-first millennium BCE.
-Phoenician was a Northwest Semitic abjad and one of the most influential
-writing systems in history.
-</p>
-
-<p>
-Scryble uses reconstructed older Semitic pronunciations, preserving
-sounds that show the relationship between Phoenician and later scripts.
-Some descendants preserved these sounds, while others adapted the letters
-for very different languages.
-</p>
-
-<p>
-Examples:
-<br><br>
-
-𐤀 Aleph represented the glottal stop /ʔ/.
-This sound was preserved in Semitic descendants such as Hebrew Aleph (א)
-and Arabic Hamza (ء), while Greek transformed Aleph into the vowel
-Alpha (Α), ancestor of Latin A.
-<br><br>
-
-𐤅 Waw represented /w/.
-This pronunciation survives in Classical Arabic Waw (و) and older Hebrew
-traditions, while some later Hebrew traditions shifted it toward /v/.
-Through Greek and Latin development, it also contributed to letters such
-as F, U, V, W, and Y.
-<br><br>
-
-𐤇 Het represented the deep throat sound /ħ/.
-This survives in Arabic Ḥa (ح) and traditional Semitic pronunciations,
-while Greek Eta (Η) lost the original consonant value.
-<br><br>
-
-𐤈 Tet represented an emphatic /tˤ/.
-This sound is preserved in Arabic Ṭa (ط) and related Semitic traditions,
-while Greek adapted the letter into Theta (Θ).
-<br><br>
-
-𐤏 Ayin represented the voiced throat sound /ʕ/.
-This survives in Arabic Ayn (ع) and older Hebrew traditions, while Greek
-adapted the letter into Omicron (Ο), changing it into a vowel.
-<br><br>
-
-𐤒 Qoph represented the uvular /q/.
-This survives in Arabic Qaf (ق) and some traditional Hebrew pronunciations.
-It also became Greek Qoppa (Ϙ) and eventually Latin Q.
-</p>
-
 
 
 <button class="backButton" onclick="returnMenu()">
@@ -501,6 +281,828 @@ Back
 
 
 
+
+
+<div id="arabicPage" class="scriptInfo" style="display:none">
+
+<h1>Arabic</h1>
+
+<p>
+Scryble uses Classical Arabic pronunciation, <br>
+the pronunciation associated with Qur'anic recitation, early Arabic literature, and formal study. <br>
+Arabic is a Central Semitic language written with an abjad descended from the Nabataean Aramaic script,<br> 
+which ultimately traces back through Aramaic to the Phoenician alphabet.
+</p>
+
+<p>
+The Arabic script developed in the Arabian Peninsula, <br>
+especially in what is today Saudi Arabia and Jordan, from earlier Nabataean writing used in the northern Arabian region. <br>
+By the rise of Islam in the 7th century CE, Arabic writing spread rapidly beyond Arabia.    
+</p>
+
+<p>
+
+At its peak, Arabic became one of the most widespread writing systems in the world, <br>
+used from the Iberian Peninsula (Spain and Portugal) and North Africa, across the Middle East and Persia (Iran), <br>
+into Central Asia, South Asia, and parts of Southeast Asia and Africa. <br>
+Today the Arabic script is used for Arabic and many other languages <br>
+including Persian, Urdu, Pashto, and others.
+
+</p>
+
+<p>
+Examples:
+<br><br>
+
+
+ا Alif : /aː/
+<br>
+Long "aa" vowel carrier. <br>
+Descended from Phoenician 𐤀 Aleph through Aramaic and Nabataean. <br>
+Related historically to Hebrew א and Greek Alpha Α.
+
+<br><br>
+
+
+ب Ba : /b/
+<br>
+B sound. <br>
+Descended from Phoenician 𐤁 Bet through Aramaic and Nabataean.<br>
+Related historically to Hebrew ב, Greek Beta Β, and Latin B.
+<br><br>
+
+
+ج Jim : /d͡ʒ/
+<br>
+"J" sound as in traditional Classical Arabic pronunciation.<br>
+Many modern dialects: /g/ in Egyptian Arabic or /ʒ/ in parts of the Levant and North Africa.
+
+<br><br>
+
+
+ح Ha : /ħ/
+<br>
+Voiceless pharyngeal sound.<br>
+Preserves an ancient Semitic sound also found in Phoenician 𐤇 Het and older Hebrew ח pronunciation.
+<br><br>
+
+
+خ Kha : /x/
+<br>
+Rough "kh" sound.<br>
+Developed from an ancient Semitic sound distinction.<br>
+In Arabic writing, dots were later added to distinguish characters such as ح and خ.
+<br><br>
+
+
+ط Ta : /tˤ/
+<br>
+Emphatic T sound.<br>
+Preserves an ancient Semitic sound related to Phoenician 𐤈 Tet and Hebrew ט.
+<br><br>
+
+
+ع Ayn : /ʕ/
+<br>
+Voiced pharyngeal sound.<br>
+Preserves an ancient Semitic sound found in Phoenician 𐤏 Ayin and older Hebrew ע pronunciation.
+<br><br>
+
+
+
+ق Qaf : /q/
+<br>
+Deep uvular Q sound.<br>
+Preserves an ancient Semitic sound related to Phoenician 𐤒 Qoph and Hebrew ק.<br>
+Many modern dialects pronounce it as /ʔ/, /g/, or sometimes /k/.
+<br><br>
+
+ث Tha : /θ/
+<br>
+"Th" sound as in English "thin."<br>
+Preserves an ancient Semitic sound. Many modern dialects merge it with /t/ or /s/.
+</p>
+
+
+ذ Dhal : /ð/
+<br>
+"Th" sound as in English "this."<br>
+Many modern dialects merge it with /d/ or /z/.
+</p>
+
+
+ش Shin : /ʃ/
+<br>
+"Sh" sound.<br>
+Related to Phoenician 𐤔 Shin and Hebrew ש.<br>
+The same ancient character family also produced Greek Sigma Σ and Latin S.
+</p>
+
+<button class="backButton" onclick="backToTraditions()">
+Back
+</button>
+
+</div>
+
+
+
+<div id="hebrewPage" class="scriptInfo" style="display:none">
+
+<h2>Hebrew</h2>
+
+<p>
+Scryble uses pronunciation based on <strong>Yemenite Hebrew and reconstructed Tiberian Hebrew</strong>, <br>
+which preserve or reconstruct many older Semitic sound distinctions that were lost in most modern varieties.
+</p>
+
+<p>
+Hebrew is a Northwest Semitic language closely related to Phoenician. <br>
+The Hebrew alphabet developed from the ancient Phoenician script through the Paleo-Hebrew alphabet, <br>
+later adopting the Aramaic square script during and after the Babylonian exile. <br>
+This developed into the Hebrew script used today.
+</p>
+
+<p>
+Hebrew originated in the southern Levant among the ancient Israelites, <br>
+especially in the regions of <strong>modern Israel and Palestine</strong>, <br>
+with related ancient Hebrew-speaking communities in surrounding areas such as <strong>Jordan</strong>.
+</p>
+
+<p>
+During antiquity, Hebrew writing was used mainly in the southern Levant. <br>
+Through Jewish communities after the diaspora, the Hebrew script spread across the <br>
+<strong>Middle East, North Africa, Europe, Central Asia, and later the Americas</strong>, <br>
+where it was used for Hebrew and Jewish languages such as Yiddish, Ladino, Judeo-Arabic, and others.
+</p>
+
+<p>
+After declining as a daily spoken language in antiquity, <br>
+Hebrew survived for centuries as a religious, literary, and scholarly language<br> 
+before being revived as a modern spoken language in the 19th–20th centuries.
+</p>
+
+<h3>Examples:</h3>
+
+<p>
+<strong>א Aleph : /ʔ/</strong><br>
+Glottal stop. <br>
+Preserves an ancient Semitic sound related to Phoenician 𐤀 Aleph and Arabic ء. <br>
+Modern Israeli Hebrew often weakens or leaves it silent.
+</p>
+
+<p>
+<strong>ב Bet : /b/</strong><br>
+B sound. <br>
+Descended from Phoenician 𐤁 Bet. <br>
+Related historically to Arabic ب, Greek Beta Β, and Latin B.
+</p>
+
+<p>
+<strong>ו Waw : /w/</strong><br>
+W sound in older Hebrew traditions including Yemenite Hebrew. <br>
+Related to Phoenician 𐤅 Waw and Arabic و. <br>
+Modern Israeli Hebrew (Vav) usually pronounces it /v/.
+</p>
+
+<p>
+<strong>ח Het : /ħ/</strong><br>
+Voiceless pharyngeal sound. <br>
+Preserved in Yemenite Hebrew and related to Phoenician 𐤇 Het and Arabic ح. <br>
+Modern Israeli Hebrew usually merges it with /χ/, similar to Khaf כ.
+</p>
+
+<p>
+<strong>ט Tet : /tˤ/</strong><br>
+Emphatic T sound in older Semitic pronunciation. <br>
+Related to Phoenician 𐤈 Tet and Arabic ط. <br>
+Most modern Hebrew traditions pronounce it as plain /t/.
+</p>
+
+<p>
+<strong>ע Ayin : /ʕ/</strong><br>
+Voiced pharyngeal sound. <br>
+Preserved in Yemenite and some Mizrahi traditions.<br> 
+Related to Phoenician 𐤏 Ayin and Arabic ع. <br>
+Modern Israeli Hebrew usually weakens it or leaves it silent.
+</p>
+
+<p>
+<strong>ק Qof : /q/</strong><br>
+Deep uvular Q sound in older Semitic pronunciation.<br> 
+Related to Phoenician 𐤒 Qoph and Arabic ق. <br>
+Modern Israeli Hebrew usually merges it with /k/.
+</p>
+
+<p>
+<strong>ש Shin : /ʃ/</strong><br>
+"Sh" sound. <br>
+Preserves the ancient Semitic sound found in Phoenician 𐤔 Shin and Arabic ش. <br>
+Related historically to Greek Sigma Σ and Latin S.
+</p>
+
+<button class="backButton" onclick="backToTraditions()">
+Back
+</button>
+
+</div>
+
+
+
+<div id="greekPage" class="scriptInfo" style="display:none">
+
+<h2>Greek</h2>
+
+<p>
+Scryble uses reconstructed <strong>Classical Greek pronunciation</strong>,<br>
+especially the Attic pronunciation used in Athens during the 5th–4th centuries BCE, <br>
+to show older Greek sound values before later changes.
+</p>
+
+<p>
+The Greek alphabet developed around the 8th century BCE from the Phoenician alphabet.<br>
+Greeks adapted the Northwest Semitic abjad by adding dedicated vowel letters, <br>
+creating one of the earliest true alphabets with separate symbols for both consonants and vowels.
+</p>
+
+<p>
+The Greek alphabet originated among Greek-speaking communities around the <strong>Aegean Sea</strong>,<br>
+especially in what is today <strong>Greece, western Turkey, and the Greek islands</strong>.
+</p>
+
+<p>
+Through Greek colonization and later the conquests of Alexander the Great,<br>
+the Greek alphabet and language spread throughout the eastern Mediterranean and Near East.<br> 
+At its peak, Greek writing was used from <strong>southern Europe and Egypt across the Middle East<br>
+into Persia (Iran), Central Asia, and parts of South Asia</strong>.
+</p>
+
+<p>
+Greek became one of the most influential writing systems in history, giving rise to or influencing many later alphabets<br> 
+including the <strong>Latin, Cyrillic, Coptic, Gothic, and Armenian scripts</strong>.
+</p>
+
+<h3>Examples:</h3>
+
+<p>
+<strong>Α Alpha : /a/</strong><br>
+A sound.<br>
+Adapted from Phoenician 𐤀 Aleph, originally a consonant /ʔ/. <br>
+Greek transformed the unused consonant into a vowel letter. Later produced Latin A.
+</p>
+
+<p>
+<strong>Β Beta : /b/</strong><br>
+B sound in Classical Greek.<br> 
+Adapted from Phoenician 𐤁 Bet. Later produced Latin B. <br>
+Modern Greek pronounces Beta as /v/.
+</p>
+
+<p>
+<strong>Γ Gamma : /g/</strong><br>
+G sound in Classical Greek.<br> 
+Adapted from Phoenician 𐤂 Gimel. Later produced Latin C and G. <br>
+Modern Greek usually pronounces Gamma as /ɣ/ or /ʝ/.
+</p>
+
+<p>
+<strong>Δ Delta : /d/</strong><br>
+D sound in Classical Greek.<br> 
+Adapted from Phoenician 𐤃 Dalet. Later produced Latin D. <br>
+Modern Greek pronounces Delta as /ð/.
+</p>
+
+<p>
+<strong>Η Eta : /ɛː/</strong><br>
+Long "eh" vowel in Classical Greek. <br>
+Adapted from Phoenician 𐤇 Het, originally a consonant. <br>
+Some early Greek dialects used it for /h/ before it became a vowel. <br>
+Modern Greek pronounces Eta as /i/.
+</p>
+
+<p>
+<strong>Θ Theta : /tʰ/</strong><br>
+Aspirated T sound in Classical Greek. <br>
+Adapted from Phoenician 𐤈 Tet. <br>
+Later changed into the /θ/ "th" sound found in Modern Greek.
+</p>
+
+<p>
+<strong>Λ Lambda : /l/</strong><br>
+L sound.<br> 
+Adapted from Phoenician 𐤋 Lamed. Later produced Latin L.
+</p>
+
+<p>
+<strong>Ο Omicron : /o/</strong><br>
+Short O sound.<br> 
+Adapted from Phoenician 𐤏 Ayin, originally a pharyngeal consonant /ʕ/. <br>
+Greek transformed it into a vowel because Greek lacked the original sound.
+</p>
+
+<p>
+<strong>Ρ Rho : /r/</strong><br>
+Rolled R sound.<br> 
+Adapted from Phoenician 𐤓 Resh. Later produced Latin R.
+</p>
+
+<p>
+<strong>Σ Sigma : /s/</strong><br>
+S sound.<br> 
+Adapted from Phoenician 𐤔 Shin. Later produced Latin S.
+</p>
+
+<button class="backButton" onclick="backToTraditions()">
+Back
+</button>
+
+</div>
+
+
+
+<div id="latinPage" class="scriptInfo" style="display:none">
+
+<h2>Latin</h2>
+
+<p>
+Scryble uses reconstructed <strong>Classical Latin pronunciation</strong> <br>
+from the late Roman Republic and early Roman Empire, preserving older Roman sound values before later changes in Medieval Latin and the Romance languages.
+</p>
+
+<p>
+The Latin alphabet developed from the Old Italic scripts of ancient Italy, <br>
+especially the Etruscan alphabet, which was itself adapted from the Greek alphabet. <br>
+Through Greek, the Latin alphabet ultimately traces back to the Phoenician script.
+</p>
+
+<p>
+Latin originated in the region of <strong>Latium in central Italy</strong>, especially around the city of <strong>Rome</strong>. <br>
+Early Latin was originally spoken by a small Italic community before expanding with the growth of the Roman Republic and Roman Empire.
+</p>
+
+<p>
+At its peak, Latin writing spread across the entire Roman world, from <strong>Britain and western Europe through North Africa, the Balkans, Egypt, and the Middle East</strong>. <br>
+After the fall of the Western Roman Empire, Latin continued as the language of scholarship, religion, science, and law across much of Europe.
+</p>
+
+<p>
+The Latin alphabet became the most widely used writing system in the world. <br>
+It gave rise to the scripts used for the Romance languages and was later adapted for many others, <br>
+including <strong>English, German, Vietnamese, Turkish, Indonesian, Swahili, and hundreds of modern languages</strong>.
+</p>
+
+<h3>Examples:</h3>
+
+<p>
+<strong>A : /a/</strong><br>
+Open A sound. <br>
+Derived from Greek Alpha Α, ultimately from Phoenician 𐤀 Aleph. <br>
+Later became the letter A used throughout Latin-based alphabets.
+</p>
+
+<p>
+<strong>B : /b/</strong><br>
+B sound.<br> 
+Derived from Greek Beta Β, ultimately from Phoenician 𐤁 Bet.
+</p>
+
+<p>
+<strong>C : /k/</strong><br>
+Always a hard K sound in Classical Latin.<br> 
+Derived from Greek Gamma Γ through Etruscan. <br>
+Later Latin and Romance languages developed soft pronunciations such as /s/ and /t͡ʃ/.
+</p>
+
+<p>
+<strong>G : /g/</strong><br>
+Always a hard G sound in Classical Latin.<br> 
+Created by modifying C to distinguish /g/ from /k/. <br>
+Many modern languages later developed softened pronunciations.
+</p>
+
+<p>
+<strong>V : /w/</strong><br>
+W sound as in English "wine" in Classical Latin. <br>
+Derived from Greek Upsilon Υ.<br> 
+Later Latin traditions changed this sound into /v/. <br>
+The single Roman letter V eventually developed into the separate letters U, V, and W.
+</p>
+
+<p>
+<strong>I : /i/ and /j/</strong><br>
+Used for both the vowel "ee" sound and the consonant Y sound as in "yes."<br> 
+Later developed into separate letters I and J.
+</p>
+
+<p>
+<strong>AE : /ae̯/</strong><br>
+Diphthong similar to "ai" in Classical Latin. <br>
+Later Latin traditions merged it into an "eh" sound /ɛː/.
+</p>
+
+<p>
+<strong>OE : /oe̯/</strong><br>
+Diphthong sound in Classical Latin. <br>
+Later merged with /e/ in many pronunciations.
+</p>
+
+<p>
+<strong>R : /r/</strong><br>
+Rolled R sound. <br>
+Derived from Greek Rho Ρ, ultimately from Phoenician 𐤓 Resh.
+</p>
+
+<p>
+<strong>S : /s/</strong><br>
+S sound. <br>
+Derived from Greek Sigma Σ, ultimately from Phoenician 𐤔 Shin.
+</p>
+
+<button class="backButton" onclick="backToTraditions()">
+Back
+</button>
+
+</div>
+
+
+
+<div id="cyrillicPage" class="scriptInfo" style="display:none">
+
+<h2>Cyrillic</h2>
+
+<p>
+Scryble uses a historically informed pronunciation based on <strong>Old Church Slavonic and Early Cyrillic traditions</strong>, <br>
+preserving older Slavic sound values before many later changes in modern Slavic languages.
+</p>
+
+<p>
+The Cyrillic alphabet was developed in the late 9th–early 10th century CE in the First Bulgarian Empire <br>
+by students of the Byzantine missionaries Cyril and Methodius. <br>
+It was based mainly on the Greek alphabet, with additional letters created for Slavic sounds not found in Greek.
+</p>
+
+<p>
+The Cyrillic script originated in the Balkans, especially in what is today <strong>Bulgaria and North Macedonia</strong>, <br>
+among Slavic-speaking Christian communities.
+</p>
+
+<p>
+Through religion, literature, and political expansion, Cyrillic spread throughout Eastern Europe and northern Asia. <br>
+At its peak it was used across <strong>the Balkans, Russia, Ukraine, Belarus, Siberia, Central Asia, the Caucasus, and parts of East Asia</strong>.
+</p>
+
+<p>
+Cyrillic became one of the world's major writing systems and is used today for many languages including<br>
+ <strong>Russian, Ukrainian, Bulgarian, Serbian, Macedonian, Mongolian, Kazakh, Kyrgyz, and others</strong>.
+</p>
+
+<h3>Examples:</h3>
+
+<p>
+<strong>А Az : /a/</strong><br>
+A sound.<br> 
+Adapted from Greek Alpha Α, ultimately from Phoenician 𐤀 Aleph through the Greek alphabet.
+</p>
+
+<p>
+<strong>В Vedi : /v/</strong><br>
+V sound.<br> 
+Adapted from Greek Beta Β, which had shifted from ancient /b/ to /v/ by the Byzantine period.
+</p>
+
+<p>
+<strong>Г Glagoli : /g/</strong><br>
+Hard G sound in Old Church Slavonic and many Cyrillic languages.<br> 
+Adapted from Greek Gamma Γ. <br>
+Ukrainian later shifted this sound to /ɦ/.
+</p>
+
+<p>
+<strong>Д Dobro : /d/</strong><br>
+D sound.<br> 
+Adapted from Greek Delta Δ, ultimately related to Phoenician 𐤃 Dalet.
+</p>
+
+<p>
+<strong>Ж Zhivete : /ʒ/</strong><br>
+"Zh" sound as in "vision." <br>
+Created for a Slavic sound not represented in Greek.
+</p>
+
+<p>
+<strong>И Izhe : /i/</strong><br>
+"Ee" vowel sound.<br> 
+Adapted from Greek Eta Η, which had shifted to /i/ by the Byzantine period.
+</p>
+
+<p>
+<strong>Ѣ Yat : /ě/</strong><br>
+Historical Slavic vowel letter representing a distinct sound in Old Church Slavonic. <br>
+Later merged differently across Slavic languages: with Е in Russian, І/Ї-related sounds in Ukrainian, and Я/Е sounds in Bulgarian dialects.
+</p>
+
+<p>
+<strong>Ц Tsi : /t͡s/</strong><br>
+"Ts" sound. <br>
+Added to represent a Slavic sound not found in Classical Greek.
+</p>
+
+<p>
+<strong>Ч Cherv : /t͡ʃ/</strong><br>
+"Ch" sound. <br>
+Added for a Slavic sound not represented by Greek letters.
+</p>
+
+<p>
+<strong>Ш Sha : /ʃ/</strong><br>
+"Sh" sound. <br>
+Created for Slavic pronunciation needs.
+</p>
+
+<p>
+<strong>Щ Shcha : /ʃt/ or /ʃtʃ/</strong><br>
+Originally represented a distinct Slavic consonant cluster. <br>
+Modern languages developed it differently: Russian /ɕː/, Bulgarian /ʃt/.
+</p>
+
+<p>
+<strong>Ъ Yer : /ŭ/</strong><br>
+Originally represented a short reduced vowel in Old Church Slavonic. <br>
+In modern Russian it became the hard sign with no independent vowel sound.
+</p>
+
+<p>
+<strong>Ь Yer : /ĭ/</strong><br>
+Originally represented a short reduced vowel in Old Church Slavonic. <br>
+In modern Russian it became the soft sign marking palatalization.
+</p>
+
+<button class="backButton" onclick="backToTraditions()">
+Back
+</button>
+
+</div>
+
+
+
+<div id="geezPage" class="scriptInfo" style="display:none">
+
+<h2>Geʿez</h2>
+
+<p>
+Scryble uses historically informed <strong>Classical Geʿez pronunciation</strong>, <br>
+based on the traditional liturgical pronunciation of the Ethiopian and Eritrean churches and reconstruction of older Ethiosemitic sound distinctions.
+</p>
+
+<p>
+Geʿez is a South Semitic language written with the Geʿez script (Fidel). <br>
+The script developed from the ancient South Arabian writing tradition, which ultimately traces back to the early Semitic alphabet family. <br>
+Unlike most Semitic scripts, Geʿez developed from an abjad into an <strong>abugida</strong>, <br>
+where each character represents a consonant combined with a vowel.
+</p>
+
+<p>
+Geʿez originated in the Horn of Africa, especially the ancient Kingdom of Aksum, located in what is today <strong>northern Ethiopia and Eritrea</strong>. <br>
+It became the language of administration, inscriptions, literature, and religion in the Aksumite civilization.
+</p>
+
+<p>
+At its peak, Geʿez writing was used across the <strong>Horn of Africa, especially Ethiopia, Eritrea, and regions connected through Red Sea trade with Arabia</strong>. <br>
+Although it declined as a daily spoken language, it survived as a sacred and literary language.
+</p>
+
+<p>
+The Geʿez script remains one of the world's oldest continuously used writing systems and is still used today for languages including<br>
+ <strong>Amharic, Tigrinya, Tigre, and other Ethiopian and Eritrean languages</strong>.
+</p>
+
+<h3>Examples:</h3>
+
+<p>
+<strong>ሀ Hä : /h/</strong><br>
+H sound.<br> 
+Preserves a Semitic consonant related to Arabic ه and Hebrew ה.
+</p>
+
+<p>
+<strong>ሠ Śä : /ɬ/ or /sʼ/</strong><br>
+Historical ś sound inherited from older Semitic. <br>
+In modern Amharic, it merged with ሰ Sä.
+</p>
+
+<p>
+<strong>ሰ Sä : /s/</strong><br>
+S sound. <br>
+Related to other Semitic sibilants such as Arabic س and Hebrew ס.
+</p>
+
+<p>
+<strong>ኀ Ḫä : /ħ/</strong><br>
+Older guttural H sound. <br>
+Related to Arabic ح and Hebrew ח. <br>
+In modern Amharic, it mostly merged with ሀ Hä.
+</p>
+
+<p>
+<strong>ዐ ʿÄyn : /ʕ/</strong><br>
+Voiced pharyngeal sound. <br>
+Related to Arabic ع, Hebrew ע, and Phoenician 𐤏 Ayin. <br>
+Modern Amharic generally lost this pronunciation.
+</p>
+
+<p>
+<strong>ቀ Qä : /kʼ/</strong><br>
+Ejective Q sound. <br>
+Preserves the older Semitic emphatic consonant series. <br>
+Related historically to Arabic ق and Hebrew ק.
+</p>
+
+<p>
+<strong>ጠ Ṭä : /tʼ/</strong><br>
+Ejective T sound. <br>
+Related to the emphatic consonants of other Semitic languages such as Arabic ط and Hebrew ט.
+</p>
+
+<p>
+<strong>ጸ Ṣä : /sʼ/</strong><br>
+Ejective S sound. <br>
+Preserves an ancient Semitic emphatic consonant distinction.
+</p>
+
+<p>
+<strong>ፐ Pä : /p/</strong><br>
+P sound.<br> 
+A later addition to represent sounds needed in Ethiopian languages. <br>
+Classical Semitic languages often lacked /p/.
+</p>
+
+<button class="backButton" onclick="backToTraditions()">
+Back
+</button>
+
+</div>
+
+
+
+<div id="phoenicianPage" class="scriptInfo" style="display:none">
+
+<h1>Phoenician</h1>
+
+
+<p>
+Based on reconstructed first-millennium BCE Phoenician pronunciation. <br>
+Phoenician was a Northwest Semitic abjad developed from earlier Proto-Canaanite writing.<br> 
+It originated on the eastern Mediterranean coast of the Levant, <br>
+especially in the Phoenician city-states of Byblos, Sidon, and Tyre in what is today mainly Lebanon, <br>
+with related Phoenician-speaking areas extending into parts of modern Syria and northern Israel.
+</p>
+
+<p>
+
+Through Phoenician trade and colonization (c. 1000–300 BCE), <br>
+the script spread across the Mediterranean world. <br>
+At its peak it was used from the Levant to Cyprus, Turkey, Greece, Malta, Sicily, Sardinia, <br>
+Southern France, North Africa (especially Tunisia and Carthage), and the Iberian Peninsula (modern Spain and Portugal).
+
+</p>
+
+
+<p>
+
+Phoenician became one of the most influential writing systems in history, giving rise to or influencing many later writing systems <br>
+including the Hebrew, Aramaic, Greek, Latin, and Arabic alphabets.
+
+</p>
+
+<p>
+Examples:
+
+<br><br>
+
+𐤀 Aleph : /ʔ/.
+<br>
+Glottal stop. <br>
+Preserved in Hebrew א and Arabic ء.<br>
+Greek adapted the consonant letter into the vowel Alpha Α.
+
+<br><br>
+
+
+𐤁 Bet : /b/
+<br>
+B sound.<br>
+Preserved in Hebrew ב and Arabic ب.<br>
+Greek adapted it into Beta Β, which later produced Latin B.
+<br><br>
+
+
+𐤅 Waw : /w/.
+<br>
+W sound.<br>
+Preserved in Classical Arabic و and older Hebrew pronunciation.<br>
+Later developments produced Greek Digamma Ϝ and Latin F,<br>
+while another Greek adaptation through Upsilon Υ eventually led to U, V, and W.
+<br><br>
+
+𐤇 Het : /ħ/.
+<br>
+Voiceless pharyngeal sound.<br>
+Preserved in Arabic ح and older Hebrew traditions.<br>
+Greek Eta Η preserved it briefly as an /h/ sound in some dialects before later becoming a vowel.
+<br><br>
+
+𐤈 Tet : /tˤ/.
+<br>
+Emphatic T sound.<br>
+Preserved in Arabic ط.<br>
+Greek adapted it into Theta Θ, originally pronounced /tʰ/.
+
+<br><br>
+
+𐤏 Ayin : /ʕ/.
+<br>
+Voiced pharyngeal sound.<br>
+Preserved in Arabic ع and older Hebrew traditions.<br>
+Greek adapted the unfamiliar consonant sign into the vowel Omicron Ο.
+<br><br>
+
+𐤒 Qoph : /q/.
+<br>
+Deep uvular Q sound.<br>
+Preserved in Arabic ق and some Semitic traditions.<br>
+Adapted into Greek Qoppa Ϙ and later Latin Q.
+
+<br><br>
+
+𐤔 Shin : /ʃ/.
+<br>
+"Sh" sound.<br>
+Preserved in Hebrew ש and Arabic ش.<br>
+Greek adapted the Semitic sibilant into Sigma Σ, which later produced Latin S.
+</p>
+
+
+<button class="backButton" onclick="backToTraditions()">
+Back
+</button>
+
+</div>
+
+
+
+
+
+
+
+<div id="treePage" class="scriptInfo" style="display:none">
+
+<h1>Script Family Tree</h1>
+
+<pre class="tree">
+Proto-Sinaitic
+      |
+Proto-Canaanite
+      |
+ ┌────┴─────────────────┐
+ |                      |
+Phoenician          South Semitic
+ |                      |
+ |              ┌───────┴────────┐
+ |              |                |
+ |        Ancient South        Geʿez
+ |          Arabian          (Ethiopic)
+ |
+ ├── Greek
+ |     |
+ |     ├── Old Italic
+ |     |       |
+ |     |     Latin
+ |     |
+ |     └── Cyrillic
+ |
+ └── Aramaic
+       |
+       ├── Hebrew
+       |
+       └── Nabataean
+              |
+            Arabic
+</pre>
+
+
+
+<p class="tree-note">
+This tree shows the evolution of writing systems, not languages.<br>
+It follows how character shapes and scripts developed from earlier systems.<br>
+Languages using related scripts are not always linguistically related, and<br>
+languages from the same family may use completely different scripts.
+</p>
+
+<button class="backButton" onclick="backToTraditions()">
+Back
+</button>
+
+
+</div>
 
 
 <!-- GAME SCREEN -->
@@ -560,6 +1162,8 @@ Main Menu
 <button id="shareButton" onclick="shareScore()" style="display:none;">
 Share
 </button>
+
+
 
 
 </div>
